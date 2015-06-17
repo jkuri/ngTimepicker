@@ -1,0 +1,67 @@
+.ng-timepicker-input {
+	width: 50px;
+	padding: 5px;
+}
+
+.ng-timepicker {
+	display: inline-block;
+	position: absolute;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	color: #333;
+	font-size: 18px;
+	padding:  3px 5px;
+	background: #fff;
+}
+
+.ng-timepicker > table > tbody > tr > td {
+	width: 20px;
+	text-align: center;
+}
+
+.ng-timepicker > table > tbody > tr > td > i {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.ng-timepicker > table > tbody > tr > td.act {
+	border: 1px solid transparent;
+	border-radius: 5px;
+}
+
+.ng-timepicker > table > tbody > tr > td.act:hover {
+	background: #f5f5f5;
+}
+
+.ng-timepicker > table > tbody > tr > td > input {
+	width: 20px;
+	outline: none;
+	padding: 5px;
+	text-align: center;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ng-timepicker.red > table > tbody > tr > td.act:hover {
+	background: #ff5c5b;
+	color: #fff;
+}
+
+.ng-timepicker.green > table > tbody > tr > td.act:hover {
+	background: #8dc63f;
+	color: #fff;
+}
+
+.ng-timepicker.blue > table > tbody > tr > td.act:hover {
+	background: #3399FF;
+	color: #fff;
+}
+
+
