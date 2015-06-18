@@ -155,7 +155,7 @@ angular.module('jkuri.timepicker', [])
 
 		},
 		template:
-		'<div><input type="text" ng-focus="showTimepicker()" ng-value="viewValue" class="ng-timepicker-input" ng-readonly="true"></div>' +
+		'<input type="text" ng-focus="showTimepicker()" ng-value="viewValue" class="ng-timepicker-input" ng-readonly="true">' +
 		'<div class="ng-timepicker" ng-show="opened" ng-class="{\'red\': theme === \'red\', \'green\': theme === \'green\', \'blue\': theme === \'blue\'}">' +
 		'  <table>' +
 		'    <tbody>' +

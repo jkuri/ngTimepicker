@@ -1,6 +1,9 @@
 .ng-timepicker-input {
 	width: 50px;
 	padding: 5px;
+	float: left;
+	border: 1px solid #d4d4d4;
+	display: block;
 }
 
 .ng-timepicker {
@@ -34,7 +37,7 @@
 }
 
 .ng-timepicker > table > tbody > tr > td > input {
-	width: 20px;
+	width: 30px;
 	outline: none;
 	padding: 5px;
 	text-align: center;
