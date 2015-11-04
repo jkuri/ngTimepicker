@@ -1,14 +1,14 @@
 {
   "name": "ng-timepicker",
   "version": "0.9.0",
-  "description": "AngularJS timepicker directive",
+  "description": "AngularJS timepicker directive w/ timezones and editable fields",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkuri/ngTimepicker.git"
+    "url": "https://github.com/whiterook6/ngTimepicker.git"
   },
   "keywords": [
     "AngularJS",
@@ -17,7 +17,10 @@
     "time",
     "picker"
   ],
-  "author": "Jan Kuri <jkuri88@gmail.com>",
+  "authors": [
+    "Jan Kuri <jkuri88@gmail.com>",
+    "Tim Graboski <whiterook6@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jkuri/ngTimepicker/issues"

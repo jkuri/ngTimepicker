@@ -8,6 +8,7 @@ angular.module('jkuri.timepicker', [])
 		scope.showMeridian = scope.$eval(attrs.showMeridian) || false;
 		scope.meridian = attrs.meridian || 'AM';
 		scope.theme = attrs.theme || '';
+		scope.editable = attrs.editable || true;
 	};
 
 	return {
@@ -23,6 +24,16 @@ angular.module('jkuri.timepicker', [])
 				var time = scope.initTime.split(':');
 				scope.hour = time[0];
 				scope.minutes = time[1];
+			};
+
+			var isValid = function(){
+				if (isNaN(scope.hour)){
+					return false;
+				} else if (isNaN(scope.minutes)){
+					return false;
+				}
+
+				return true;
 			};
 
 			var setTime = function () {
@@ -142,13 +153,19 @@ angular.module('jkuri.timepicker', [])
 				setTime();
 			};
 
+			scope.edit = function () {
+				if (scope.editable && isValid()){
+					setTime();
+				}
+			};
+
 			$document.on('click', function (e) {
 				if (element !== e.target && !element[0].contains(e.target)) {
-				    scope.$apply(function () {
-				        scope.opened = false;
-				    });
+					scope.$apply(function () {
+						scope.opened = false;
+					});
 				}
-            });
+			});
 
 			initTime();
 			setTime();
@@ -160,19 +177,19 @@ angular.module('jkuri.timepicker', [])
 		'  <table>' +
 		'    <tbody>' +
 		'    <tr>' +
-		'        <td class="act noselect" ng-click="incrementHour()"><i class="fa fa-angle-up"></i></td>' + 
+		'        <td class="act noselect" ng-click="incrementHour()"><i class="fa fa-angle-up"></i></td>' +
 		'        <td></td>' +
 		'        <td class="act noselect" ng-click="incrementMinutes()"><i class="fa fa-angle-up"></i></td>' +
 		'        <td class="act noselect" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="fa fa-angle-up"></i></td>' +
 		'      </tr>' +
 		'      <tr>' +
-		'        <td><input type="text" ng-model="hour" ng-readonly="true"></td>' +
+		'        <td><input type="text" ng-model="hour" ng-readonly="!editable" ng-change="edit()"></td>' +
 		'        <td>:</td>' +
-		'        <td><input type="text" ng-model="minutes" ng-readonly="true"></td>' +
+		'        <td><input type="text" ng-model="minutes" ng-readonly="!editable" ng-change="edit()"></td>' +
 		'        <td ng-show="showMeridian"><input type="text" ng-model="meridian" ng-readonly="true"></td>' +
 		'      </tr>' +
 		'      <tr>' +
-		'        <td class="act noselect" ng-click="decreaseHour()"><i class="fa fa-angle-down"></i></td>' + 
+		'        <td class="act noselect" ng-click="decreaseHour()"><i class="fa fa-angle-down"></i></td>' +
 		'        <td></td>' +
 		'        <td class="act noselect" ng-click="decreaseMinutes()"><i class="fa fa-angle-down"></i></td>' +
 		'        <td class="act noselect" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="fa fa-angle-down"></i></td>' +
