@@ -6,20 +6,18 @@
 	<link rel="stylesheet" type="text/css" href="src/css/ngTimepicker.css">
 </head>
 <body ng-controller="Ctrl as ctrl">
-	<div>
-		<ng-timepicker ng-model="ctrl.time"></ng-timepicker>
-		{{ ctrl.time }}
+	<div style="clear:both">
+		<ng-timepicker ng-model="ctrl.time"></ng-timepicker>{{ ctrl.time }}
 	</div>
 
-	<div>
-		<ng-timepicker ng-model="ctrl.time2" theme="red" show-meridian="true"></ng-timepicker>
-		{{ ctrl.time2 }}
+	<div style="clear:both">
+		<ng-timepicker ng-model="ctrl.time2" theme="red" show-meridian="true"></ng-timepicker>{{ ctrl.time2 }}
 	</div>
 
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-<script type="text/javascript" src="src/js/ngTimepicker.js"></script>
+<script type="text/javascript" src="src/js/ngTimepicker.min.js"></script>
 <script type="text/javascript">
 var app = angular.module('app', ['jkuri.timepicker']);
 app.controller('Ctrl', [function() { 
