@@ -1,11 +1,12 @@
 {
   "name": "ngTimepicker",
-  "version": "0.8.0",
-  "homepage": "https://github.com/jkuri/ngTimepicker",
+  "version": "0.1.0",
+  "homepage": "https://github.com/whiterook6/ngTimepicker",
   "authors": [
-    "Jan Kuri <jkuri88@gmail.com>"
+    "Jan Kuri <jkuri88@gmail.com>",
+    "Tim Graboski <whiterook6@gmail.com>"
   ],
-  "description": "AngularJS Timepicker",
+  "description": "AngularJS timepicker directive w/ editable fields",
   "main": "src/js/ngTimepicker.js",
   "keywords": [
     "AngularJS",
