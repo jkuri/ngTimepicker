@@ -12,12 +12,10 @@
 			};
 
 			var getPosition = function(element){
-				var de = document.documentElement;
-				var box = element.getBoundingClientRect();
 				var input_box = element.firstChild;
 				
-				var top = box.top + window.pageYOffset - de.clientTop + input_box.offsetHeight;
-				var left = box.left + window.pageXOffset - de.clientLeft;
+				var top = input_box.offsetTop + input_box.offsetHeight;
+				var left = input_box.offsetLeft;
 
 				return { top: top - 1, left: left };
 			};
