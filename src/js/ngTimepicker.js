@@ -79,10 +79,12 @@ angular.module('jkuri.timepicker', [])
 					}
 				} else {
 					if (parseInt(scope.hour, 10) < 12) {
+            if (parseInt(scope.hour, 10) === 11) {
+				      scope.toggleMeridian();
+				    } 
 						scope.hour = parseInt(scope.hour, 10) + 1;
 					} else if (parseInt(scope.hour, 10) === 12) {
 						scope.hour = 1;
-						scope.toggleMeridian();
 					}
 				}
 
@@ -101,10 +103,12 @@ angular.module('jkuri.timepicker', [])
 						scope.hour = parseInt(scope.hour, 10) - 1;
 					}
 				} else {
-					if (parseInt(scope.hour, 10) === 0) {
+					if (parseInt(scope.hour, 10) === 1) {
 						scope.hour = 12;
-						scope.toggleMeridian();
 					} else {
+            if (parseInt(scope.hour, 10) === 12) {
+              scope.toggleMeridian();
+            }
 						scope.hour = parseInt(scope.hour, 10) - 1;
 					}
 				}
