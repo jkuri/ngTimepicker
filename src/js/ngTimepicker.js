@@ -125,7 +125,11 @@ angular.module('jkuri.timepicker', [])
 				if (scope.minutes > 59) {
 					scope.minutes = '00';
 					scope.incrementHour();
-				}
+				} else {
+          if (parseInt(scope.minutes, 10) < 10) {
+            scope.minutes = '0' + scope.minutes;
+          }          
+        }
 				setTime();
 			};
 
@@ -138,6 +142,12 @@ angular.module('jkuri.timepicker', [])
 				if (parseInt(scope.minutes, 10) === 0) {
 					scope.minutes = '00';
 				}
+        else {
+          if (parseInt(scope.minutes, 10) < 10) {
+            scope.minutes = '0' + scope.minutes;
+          }
+        }
+        
 				setTime();
 			};
 
