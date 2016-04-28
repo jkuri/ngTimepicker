@@ -55,6 +55,11 @@ angular.module('jkuri.timepicker', [])
 					}
 				}
 			};
+            
+            scope.$watch(attrs['ngModel'], function (newTime) {
+                scope.initTime = newTime;
+                reinitTime();
+            });
 
 			var reinitTime = function () {
 				var time = scope.initTime.split(':');
