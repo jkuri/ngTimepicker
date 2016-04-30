@@ -6,7 +6,10 @@
     "Jan Kuri <jkuri88@gmail.com>"
   ],
   "description": "AngularJS Timepicker",
-  "main": "src/js/ngTimepicker.js",
+  "main": [
+    "src/js/ngTimepicker.js",
+    "src/css/ngTimepicker.css"
+  ],
   "keywords": [
     "AngularJS",
     "directive",
