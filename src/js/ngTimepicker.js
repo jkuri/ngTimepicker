@@ -33,7 +33,28 @@
 
 					var initTime = function () {
 						var time = scope.initTime.split(':');
-						scope.hour = time[0];
+
+						if (scope.showMeridian){
+							if (time[0] === 0){
+								scope.hour = 12;
+								scope.meridian = 'AM';
+							} else if (time[0] === 12){
+								scope.hour = 12;
+								scope.meridian = 'PM';
+							} else if (time[0] > 12 && time[0] < 22){
+								scope.hour = '0' + (time[0] - 12);
+								scope.meridian = 'PM';
+							} else if (time[0] >= 22) {
+								scope.hour = time[0] - 12;
+								scope.meridian = 'PM';
+							} else {
+								scope.hour = time[0];
+								scope.meridian = 'AM';
+							}
+						} else {
+							scope.hour = time[0];
+						}
+
 						scope.minutes = time[1];
 					};
 
